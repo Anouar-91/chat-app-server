@@ -27,7 +27,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server,{
     cors:{
-        origin: ["http://localhost:3001", "http://192.168.1.59:3001"] ,
+        origin: ["http://localhost:3001", "http://192.168.1.59:3001", "https://zippy-kataifi-f39844.netlify.app"] ,
         credentials: true,
     }
 } )
