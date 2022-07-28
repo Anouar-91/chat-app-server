@@ -3,6 +3,8 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 import defaultRouter from "./routes/index";
 
+export function launch({ host, protocol, port }) {
+
 const app = express();
 require('dotenv').config();
 
@@ -18,8 +20,6 @@ mongoose
     .catch((error) => console.log("Failed to connect MongoDB", error));
 
     app.use(defaultRouter);
-
-
 
 const server = app.listen(process.env.PORT, () => {
     console.log(`Server started on Port ${process.env.PORT}`);
@@ -45,3 +45,4 @@ io.on("connection", (socket) => {
     }
   });
 });
+}
