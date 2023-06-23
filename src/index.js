@@ -14,6 +14,10 @@ const socket = require('socket.io');
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('API Chat is running...')
+})
+
 mongoose
     .connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.gbvxg.mongodb.net/chat-app`)
     .then(() => console.log('Connected to MongoDB'))
